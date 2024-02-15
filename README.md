@@ -1,6 +1,6 @@
 # Gatcha_WebAPI
 ### Groupe:
-Zhengkun YANG
-Serigne Saliou CISSE
-Yuzhe ZHU
-André-Mathys FLINOIS
+André-Mathys FLINOIS<br>
+Yuzhe ZHU<br>
+Zhengkun YANG<br>
+Serigne Saliou CISSE<br>

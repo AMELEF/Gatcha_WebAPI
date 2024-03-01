@@ -1,0 +1,36 @@
+version: '3.3'
+services:
+  mongo:
+    ports:
+      - '27017:27017'
+    container_name: WebAPIAuthenticationDB
+    restart: on-failure
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mongoadmin
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    image: mongo
+    networks:
+      - spring-cloud-network
+    volumes:
+      - authdb:/data/authdb
+  auth-api:
+    depends_on:
+      - mongo
+    container_name: AuthenticationAPI
+    build:
+      context: docker-authapi
+      dockerfile: Gatcha_WebAPI/Dockerfile
+    image: authentication-api:latest
+    ports:
+      - "8080:8080"
+    networks:
+      - spring-cloud-network
+    environment:
+      SPRING_APPLICATION_JSON: '{
+                "spring.data.mongodb.uri" : "mongodb://localhost:27017/authdb?authSource=admin"
+              }'
+networks:
+  spring-cloud-network:
+    driver: bridge
+volumes:
+  authdb:

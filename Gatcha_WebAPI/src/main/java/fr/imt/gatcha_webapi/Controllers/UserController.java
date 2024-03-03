@@ -2,6 +2,8 @@ package fr.imt.gatcha_webapi.Controllers;
 
 import fr.imt.gatcha_webapi.Beans.User;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,12 +23,17 @@ public class UserController {
 
     @RequestMapping("/register")
     public void registerUser(@RequestBody User userAccount) {
-        mongoTemplate.insert(userAccount, "Users");
+        mongoTemplate.insert(userAccount,"Users");
+    }
+
+    @RequestMapping("/delete")
+    public void deleteUser(@RequestBody User userAccount) {
+        mongoTemplate.findAndRemove(Query.query(Criteria.where("username").is(userAccount.getUsername())),User.class);
     }
 
     @GetMapping
     public List<User> getUsers(){
-        return mongoTemplate.findAll(User.class, "Users");
+        return mongoTemplate.findAll(User.class,"Users");
     }
 
 

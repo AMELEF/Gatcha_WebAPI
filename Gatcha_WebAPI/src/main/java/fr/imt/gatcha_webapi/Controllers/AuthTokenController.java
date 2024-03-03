@@ -12,11 +12,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.security.NoSuchAlgorithmException;
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.Temporal;
+import java.time.temporal.TemporalAmount;
+import java.time.temporal.TemporalUnit;
 import java.util.Date;
 import java.util.List;
-
-import static fr.imt.gatcha_webapi.Encryption.AES256.encrypt;
 
 @RestController
 @RequestMapping("/token")
@@ -30,7 +35,7 @@ public class AuthTokenController {
 
     @GetMapping
     public String welcome() {
-        return "OK OK Get Page of /token";
+        return "Sub-url :\n /login \n /check";
     }
 
     @RequestMapping("/login")
@@ -38,18 +43,36 @@ public class AuthTokenController {
         String user = userCredentials.getUsername();
         String pass = userCredentials.getPassword();
 
-        User searchResult = mongoTemplate.findById(user,User.class);
+        User searchResult = mongoTemplate.findOne(Query.query(Criteria.where("username").is(user)),User.class);
         if(searchResult.getPassword().equals(pass)) {
+            AuthToken authToken = new AuthToken();
             String timeStamp = new SimpleDateFormat("yyyy/MM/dd-HH:mm:ss").format(new Date());
             System.out.println(timeStamp);
             String plainToken = user + "-" + timeStamp;
-            String cryptedToken = AES256.encrypt(plainToken, "QSDFGHJKLM", "");
+            System.out.println(plainToken);
+            String cryptedToken = AES256.encrypt(plainToken, "QSDFGHJKLM", "OKOKOK");
             System.out.println(cryptedToken);
-            AuthToken authToken = new AuthToken();
             authToken.setToken(cryptedToken);
+            mongoTemplate.save(authToken,"Tokens");
             return authToken;
         }
         return new AuthToken();
+    }
+
+    @RequestMapping("/check")
+    public String checkToken(@RequestBody AuthToken token) throws ParseException {
+        String plaintoken = AES256.decrypt(token.getToken(),"QSDFGHJKLM","OKOKOK");
+        System.out.println(plaintoken);
+        SimpleDateFormat timestamp = new SimpleDateFormat("yyyy/MM/dd-HH:mm:ss");
+        Date tokenDate = timestamp.parse(plaintoken.substring(plaintoken.indexOf('-')));
+        Date now = new Date();
+        if (now.toInstant().compareTo(tokenDate.toInstant().plus(1, ChronoUnit.HOURS)) > 0){
+            return plaintoken.substring(0,plaintoken.indexOf("-"));
+        }
+        if (mongoTemplate.exists(Query.query(Criteria.where("token").is(token.getToken())),AuthToken.class)) {
+            mongoTemplate.findAndRemove(Query.query(Criteria.where("token").is(token.getToken())), AuthToken.class);
+        }
+        return "Erreur 401, veuillez vous connecter";
     }
 
 

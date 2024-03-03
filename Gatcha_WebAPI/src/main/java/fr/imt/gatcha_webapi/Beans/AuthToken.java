@@ -1,7 +1,7 @@
 package fr.imt.gatcha_webapi.Beans;
 
 public class AuthToken {
-    String token;
+    private String token;
 
     public String getToken() {
         return token;

@@ -1,0 +1,28 @@
+version: '3.3'
+services:
+  mongo:
+    ports:
+      - '27017:27017'
+    container_name: mongodb
+    restart: on-failure
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mongoadmin
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    image: mongo
+    networks:
+      - auth-network
+  auth-api:
+    depends_on:
+      - mongo
+    container_name: authapi
+    build:
+      context: docker-authapi
+      dockerfile: Gatcha_WebAPI/Dockerfile
+    image: authentication-api:latest
+    ports:
+      - "8080:8080"
+    networks:
+      - auth-network
+networks:
+  auth-network:
+    driver: bridge

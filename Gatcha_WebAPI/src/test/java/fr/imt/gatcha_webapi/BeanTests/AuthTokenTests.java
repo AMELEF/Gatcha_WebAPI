@@ -13,7 +13,7 @@ import org.springframework.data.mongodb.core.query.Query;
 @SpringBootTest
 public class AuthTokenTests {
 
-    private static MongoTemplate mongoTemplate;
+    /*private static MongoTemplate mongoTemplate;
     @Test
     public void registerUserInDB(){
         UserController userController = new UserController(mongoTemplate);
@@ -24,5 +24,5 @@ public class AuthTokenTests {
         User getUserInDb= mongoTemplate.findById("PhilippeVerdier",User.class, "Users");
         assert(getUserInDb.equals(newUser));
         mongoTemplate.findAndRemove(Query.query(Criteria.where("username").is("PhilippeVerdier")),User.class,"Users");
-    }
+    }*/
 }

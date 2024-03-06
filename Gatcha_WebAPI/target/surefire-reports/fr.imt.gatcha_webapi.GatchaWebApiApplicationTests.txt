@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: fr.imt.gatcha_webapi.GatchaWebApiApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.500 s -- in fr.imt.gatcha_webapi.GatchaWebApiApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.999 s -- in fr.imt.gatcha_webapi.GatchaWebApiApplicationTests

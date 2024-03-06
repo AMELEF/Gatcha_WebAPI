@@ -26,9 +26,10 @@ public class UserController {
         mongoTemplate.insert(userAccount,"Users");
     }
 
+
     @RequestMapping("/delete")
     public void deleteUser(@RequestBody User userAccount) {
-        mongoTemplate.findAndRemove(Query.query(Criteria.where("username").is(userAccount.getUsername())),User.class);
+        mongoTemplate.findAndRemove(Query.query(Criteria.where("username").is(userAccount.getUsername())),User.class,"Users");
     }
 
     @GetMapping

@@ -11,6 +11,8 @@ services:
     image: mongo
     networks:
       - auth-network
+    volumes:
+      - dbdata6:/data/db
   auth-api:
     depends_on:
       - mongo
@@ -19,6 +21,8 @@ services:
       context: docker-authapi
       dockerfile: Gatcha_WebAPI/Dockerfile
     image: authentication-api:latest
+    environment:
+      SPRING_DATA_MONGO_URI: mongodb://mongoadmin:password@localhost:27017/authdb
     ports:
       - "8080:8080"
     networks:
@@ -26,3 +30,5 @@ services:
 networks:
   auth-network:
     driver: bridge
+volumes:
+  dbdata6:

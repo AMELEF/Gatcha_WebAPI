@@ -1,4 +1,4 @@
-# Gatcha_WebAPI
+# Gatcha_WebAPI_Authentication
 ### Groupe:
 André-Mathys FLINOIS<br>
 Yuzhe ZHU<br>

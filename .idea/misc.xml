@@ -5,6 +5,10 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/Gatcha_WebAPI/target/maven-archiver/pom.properties" />
+        <option value="$PROJECT_DIR$/Gatcha_WebAPI_Auth/pom.xml" />
+        <option value="$PROJECT_DIR$/Gatcha_WebAPI_Monster/pom.xml" />
+        <option value="$PROJECT_DIR$/Gatcha_WebAPI_Player/pom.xml" />
+        <option value="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/pom.xml" />
       </list>
     </option>
   </component>

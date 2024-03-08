@@ -5,14 +5,119 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d5ab947-d37e-411b-b40f-d1593de6bdf7" name="Changes" comment="Dockerfile : added build step so it's auto">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI/Dockerfile" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DockerfileAuth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DockerfileInvoc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DockerfileMonster" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DockerfilePlayer" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Auth/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Auth/mvnw.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Auth/src/main/resources/application-localhost.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/mvnw.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/src/main/java/fr/imt/gatcha_webapi/Encryption/AES256.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/src/main/java/fr/imt/gatcha_webapi/InvocAPIApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/target/Gatcha_WebAPI-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/target/Gatcha_WebAPI-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/target/classes/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/target/classes/fr/imt/gatcha_webapi/Encryption/AES256.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/target/classes/fr/imt/gatcha_webapi/MonsterAPIApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/target/surefire-reports/TEST-fr.imt.gatcha_webapi.GatchaWebApiApplicationTests.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/target/surefire-reports/fr.imt.gatcha_webapi.GatchaWebApiApplicationTests.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/target/test-classes/fr/imt/gatcha_webapi/BeanTests/AuthTokenTests.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/target/test-classes/fr/imt/gatcha_webapi/GatchaWebApiApplicationTests.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/mvnw.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/src/main/java/fr/imt/gatcha_webapi/Encryption/AES256.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/src/main/java/fr/imt/gatcha_webapi/MonsterAPIApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/target/Gatcha_WebAPI-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/target/Gatcha_WebAPI-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/target/classes/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/target/surefire-reports/TEST-fr.imt.gatcha_webapi.GatchaWebApiApplicationTests.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/target/surefire-reports/fr.imt.gatcha_webapi.GatchaWebApiApplicationTests.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/target/test-classes/fr/imt/gatcha_webapi/BeanTests/AuthTokenTests.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/target/test-classes/fr/imt/gatcha_webapi/GatchaWebApiApplicationTests.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/mvnw.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/src/main/java/fr/imt/gatcha_webapi/Encryption/AES256.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/src/main/java/fr/imt/gatcha_webapi/PlayerAPIApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/target/Gatcha_WebAPI-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/target/Gatcha_WebAPI-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/target/classes/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/target/classes/fr/imt/gatcha_webapi/Encryption/AES256.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/target/classes/fr/imt/gatcha_webapi/MonsterAPIApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/target/surefire-reports/TEST-fr.imt.gatcha_webapi.GatchaWebApiApplicationTests.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/target/surefire-reports/fr.imt.gatcha_webapi.GatchaWebApiApplicationTests.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/target/test-classes/fr/imt/gatcha_webapi/BeanTests/AuthTokenTests.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/target/test-classes/fr/imt/gatcha_webapi/GatchaWebApiApplicationTests.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/start.ps1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Gatcha_WebAPI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Gatcha_WebAPI.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Auth/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI/src/main/java/fr/imt/gatcha_webapi/Beans/AuthToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Auth/src/main/java/fr/imt/gatcha_webapi/Beans/AuthToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI/src/main/java/fr/imt/gatcha_webapi/Beans/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Auth/src/main/java/fr/imt/gatcha_webapi/Beans/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI/src/main/java/fr/imt/gatcha_webapi/Controllers/AuthTokenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Auth/src/main/java/fr/imt/gatcha_webapi/Controllers/AuthTokenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI/src/main/java/fr/imt/gatcha_webapi/Controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Auth/src/main/java/fr/imt/gatcha_webapi/Controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI/src/main/java/fr/imt/gatcha_webapi/Encryption/AES256.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Auth/src/main/java/fr/imt/gatcha_webapi/Encryption/AES256.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI/src/main/java/fr/imt/gatcha_webapi/GatchaWebApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Auth/src/main/java/fr/imt/gatcha_webapi/AuthAPIApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Auth/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI/src/test/java/fr/imt/gatcha_webapi/BeanTests/AuthTokenTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Auth/src/test/java/fr/imt/gatcha_webapi/BeanTests/AuthTokenTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI/target/Gatcha_WebAPI-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Auth/target/Gatcha_WebAPI-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI/target/Gatcha_WebAPI-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Auth/target/Gatcha_WebAPI-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Auth/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI/target/classes/fr/imt/gatcha_webapi/Beans/AuthToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Auth/target/classes/fr/imt/gatcha_webapi/Beans/AuthToken.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI/target/classes/fr/imt/gatcha_webapi/Controllers/AuthTokenController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Auth/target/classes/fr/imt/gatcha_webapi/Controllers/AuthTokenController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI/target/classes/fr/imt/gatcha_webapi/Controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Auth/target/classes/fr/imt/gatcha_webapi/Controllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Auth/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Auth/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Auth/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Auth/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Auth/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI/target/surefire-reports/TEST-fr.imt.gatcha_webapi.GatchaWebApiApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Auth/target/surefire-reports/TEST-fr.imt.gatcha_webapi.GatchaWebApiApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI/target/surefire-reports/fr.imt.gatcha_webapi.GatchaWebApiApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Auth/target/surefire-reports/fr.imt.gatcha_webapi.GatchaWebApiApplicationTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI/target/test-classes/fr/imt/gatcha_webapi/BeanTests/AuthTokenTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Auth/target/test-classes/fr/imt/gatcha_webapi/BeanTests/AuthTokenTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI/target/test-classes/fr/imt/gatcha_webapi/GatchaWebApiApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Auth/target/test-classes/fr/imt/gatcha_webapi/GatchaWebApiApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -32,29 +137,96 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/amlf2/IdeaProjects/Gatcha_WebAPI",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\amlf2\IdeaProjects\Gatcha_WebAPI" />
+      <recent name="C:\Users\amlf2\IdeaProjects\Gatcha_WebAPI\Gatcha_WebAPI_Auth\src\main\resources" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\amlf2\IdeaProjects\Gatcha_WebAPI" />
       <recent name="C:\Users\amlf2\IdeaProjects\Gatcha_WebAPI\Gatcha_WebAPI" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.yml.auth-api: Compose Deployment">
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean install" />
+    </option>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.MonsterAPIApplication">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Gatcha_WebAPI_Auth" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Gatcha_WebAPI_Auth" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthAPIApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="Gatcha_WebAPI_Auth" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="fr.imt.gatcha_webapi.AuthAPIApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InvocAPIApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Gatcha_WebAPI_Invoc" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="fr.imt.gatcha_webapi.InvocAPIApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MonsterAPIApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Gatcha_WebAPI_Monster" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="fr.imt.gatcha_webapi.MonsterAPIApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlayerAPIApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Gatcha_WebAPI_Player" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="fr.imt.gatcha_webapi.PlayerAPIApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
         <settings />
@@ -87,6 +259,14 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Docker.docker-compose.yml.auth-api: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.mongo: Compose Deployment" />
+      <item itemvalue="Spring Boot.InvocAPIApplication" />
+      <item itemvalue="Spring Boot.PlayerAPIApplication (1)" />
+      <item itemvalue="Spring Boot.AuthAPIApplication" />
+      <item itemvalue="Spring Boot.MonsterAPIApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Docker.docker-compose.yml.auth-api: Compose Deployment" />
@@ -103,7 +283,7 @@
       <option name="presentableId" value="Default" />
       <updated>1709830881030</updated>
       <workItem from="1709830884849" duration="4892000" />
-      <workItem from="1709899905972" duration="873000" />
+      <workItem from="1709899905972" duration="11376000" />
     </task>
     <task id="LOCAL-00001" summary="Dockerfile : added build step so it's auto">
       <option name="closed" value="true" />
@@ -113,7 +293,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709831099370</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Dockerfile : added build step so it's auto">
+      <option name="closed" value="true" />
+      <created>1709901686682</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1709901686682</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

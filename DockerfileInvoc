@@ -1,0 +1,13 @@
+#Build InvocAPI package
+FROM maven:3.9.6-amazoncorretto-21 as build
+RUN mkdir -p /invoc-api
+WORKDIR /invoc-api
+COPY Gatcha_WebAPI_Invoc/pom.xml /invoc-api
+COPY Gatcha_WebAPI_Invoc/src /invoc-api/src
+RUN mvn -f pom.xml clean package
+#Run InvocAPI container
+FROM openjdk:21
+MAINTAINER amflinois
+COPY --from=build /invoc-api/target/*.jar invoc-api.jar
+ENTRYPOINT ["java", "-jar", "/invoc-api.jar"]
+EXPOSE 27022/tcp

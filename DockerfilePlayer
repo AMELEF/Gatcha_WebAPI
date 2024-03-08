@@ -1,0 +1,13 @@
+#Build PlayerAPI package
+FROM maven:3.9.6-amazoncorretto-21 as build
+RUN mkdir -p /player-api
+WORKDIR /player-api
+COPY Gatcha_WebAPI_Player/pom.xml /player-api
+COPY Gatcha_WebAPI_Player/src /player-api/src
+RUN mvn -f pom.xml clean package
+#Run PlayerAPI container
+FROM openjdk:21
+MAINTAINER amflinois
+COPY --from=build /player-api/target/*.jar player-api.jar
+ENTRYPOINT ["java", "-jar", "/player-api.jar"]
+EXPOSE 27019/tcp

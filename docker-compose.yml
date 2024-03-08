@@ -10,23 +10,63 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=password
     image: mongo
     networks:
-      - auth-network
+      - gatcha-network
     volumes:
       - mongo-gatchadb:/data/db
   auth-api:
     depends_on:
       - mongo
     container_name: auth-api
-    build: .
+    build:
+      dockerfile: DockerfileAuth
     image: auth-api:latest
     environment:
       SPRING_DATA_MONGO_URI: mongodb://mongoadmin:password@localhost:27017/authdb
     ports:
-      - "8080:8080"
+      - "27018:27018"
     networks:
-      - auth-network
+      - gatcha-network
+  player-api:
+    depends_on:
+      - mongo
+    container_name: player-api
+    build:
+      dockerfile: DockerfilePlayer
+    image: player-api:latest
+    environment:
+      SPRING_DATA_MONGO_URI: mongodb://mongoadmin:password@localhost:27017/gatchadb
+    ports:
+      - "27019:27019"
+    networks:
+      - gatcha-network
+  monster-api:
+    depends_on:
+      - mongo
+    container_name: monster-api
+    build:
+      dockerfile: DockerfileMonster
+    image: monster-api:latest
+    environment:
+      SPRING_DATA_MONGO_URI: mongodb://mongoadmin:password@localhost:27017/gatchadb
+    ports:
+      - "27021:27021"
+    networks:
+      - gatcha-network
+  invoc-api:
+    depends_on:
+      - mongo
+    container_name: invoc-api
+    build:
+      dockerfile: DockerfileInvoc
+    image: invoc-api:latest
+    environment:
+      SPRING_DATA_MONGO_URI: mongodb://mongoadmin:password@localhost:27017/gatchadb
+    ports:
+      - "27022:27022"
+    networks:
+      - gatcha-network
 networks:
-  auth-network:
+  gatcha-network:
     driver: bridge
 volumes:
     mongo-gatchadb:

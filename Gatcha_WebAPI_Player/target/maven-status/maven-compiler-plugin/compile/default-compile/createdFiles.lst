@@ -1,0 +1,6 @@
+fr\imt\gatcha_webapi\Controllers\AuthTokenController.class
+fr\imt\gatcha_webapi\Controllers\UserController.class
+fr\imt\gatcha_webapi\Encryption\AES256.class
+fr\imt\gatcha_webapi\Beans\AuthToken.class
+fr\imt\gatcha_webapi\Beans\User.class
+fr\imt\gatcha_webapi\GatchaWebApiApplication.class

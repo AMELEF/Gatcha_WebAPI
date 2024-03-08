@@ -12,15 +12,13 @@ services:
     networks:
       - auth-network
     volumes:
-      - dbdata6:/data/db
+      - mongo-gatchadb:/data/db
   auth-api:
     depends_on:
       - mongo
-    container_name: authapi
-    build:
-      context: docker-authapi
-      dockerfile: Gatcha_WebAPI/Dockerfile
-    image: authentication-api:latest
+    container_name: auth-api
+    build: .
+    image: auth-api:latest
     environment:
       SPRING_DATA_MONGO_URI: mongodb://mongoadmin:password@localhost:27017/authdb
     ports:
@@ -31,4 +29,4 @@ networks:
   auth-network:
     driver: bridge
 volumes:
-  dbdata6:
+    mongo-gatchadb:

@@ -32,7 +32,7 @@ public class AuthTokenController {
 
     @GetMapping
     public String welcome() {
-        return "Sub-url :\n /login \n /check";
+        return "Paths :<br> /login <br> /check <br> /list";
     }
 
     @RequestMapping("/login")

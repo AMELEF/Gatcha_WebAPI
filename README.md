@@ -8,7 +8,7 @@ Montaha BEN SALEM<br>
 
 ## Comment lancer
 - Cloner le projet entier dans un dossier<br>
-- Exécuter start.ps1 (ou "docker-compsoe up -d" dans un terminal)<br>
+- Exécuter start.ps1 (ou "docker-compose up -d" dans un terminal)<br>
 
 
 ## Documentation

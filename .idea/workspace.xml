@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6d5ab947-d37e-411b-b40f-d1593de6bdf7" name="Changes" comment="APIAuth+APIPlayer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI_Player/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI_Player/target/classes/fr/imt/gatcha_webapi/Beans/Joueur.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/target/classes/fr/imt/gatcha_webapi/Beans/Joueur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI_Player/target/classes/fr/imt/gatcha_webapi/Controllers/JoueurController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/target/classes/fr/imt/gatcha_webapi/Controllers/JoueurController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +185,7 @@
       <workItem from="1710416887277" duration="6026000" />
       <workItem from="1710428047746" duration="4203000" />
       <workItem from="1710537398070" duration="1452000" />
-      <workItem from="1710747409517" duration="3834000" />
+      <workItem from="1710747409517" duration="5497000" />
     </task>
     <task id="LOCAL-00001" summary="Dockerfile : added build step so it's auto">
       <option name="closed" value="true" />
@@ -248,7 +251,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710750547973</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="APIAuth+APIPlayer">
+      <option name="closed" value="true" />
+      <created>1710751361738</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1710751361738</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

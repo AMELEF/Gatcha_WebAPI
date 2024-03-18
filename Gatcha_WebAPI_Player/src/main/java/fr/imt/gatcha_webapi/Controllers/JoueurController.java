@@ -53,7 +53,7 @@ public class JoueurController {
     @RequestMapping("/register")
     public String addPlayer(@RequestHeader("Authorization") String token){
         String username = testToken(token);
-        if (!mongoTemplate.exists(Query.query(Criteria.where("identifiant").is(username)),Joueur.class,"Players")){
+        if (!mongoTemplate.exists(Query.query(Criteria.where("username").is(username)),Joueur.class,"Players")){
             mongoTemplate.save(new Joueur(username), "Players");
             return "200 Player has been created";
         }
@@ -66,7 +66,7 @@ public class JoueurController {
     @RequestMapping("/deleteMyPlayer")
     public String removePlayer(@RequestHeader("Authorization") String token){
         String username = testToken(token);
-        if (mongoTemplate.exists(Query.query(Criteria.where("identifiant").is(username)),Joueur.class,"Players")) {
+        if (mongoTemplate.exists(Query.query(Criteria.where("username").is(username)),Joueur.class,"Players")) {
             mongoTemplate.remove(getInformationsProfil(token), "Players");
             return "200 Your player has been deleted, please go to /players/register to create a new one.";
         }

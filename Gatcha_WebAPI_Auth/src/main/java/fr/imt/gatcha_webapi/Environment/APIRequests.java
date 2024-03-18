@@ -23,4 +23,28 @@ public class APIRequests {
                 .body(String.class);
         return response;
     }
+
+    public String deletePlayer(String token){
+        String url = APIURLs.PLAYERAPI.link+"/players/deleteMyPlayer";
+        RestClient restClient = RestClient.create();
+        String response = restClient.post()
+                .uri(url)
+                .contentType(MediaType.APPLICATION_JSON)
+                .header("Authorization",token)
+                .retrieve()
+                .body(String.class);
+        return response;
+    }
+
+    public String getTokenUsername(String token){
+        String url = APIURLs.AUTHAPI.link+"/token/check";
+        RestClient restClient = RestClient.create();
+        String response = restClient.post()
+                .uri(url)
+                .contentType(MediaType.APPLICATION_JSON)
+                .header("Authorization",token)
+                .retrieve()
+                .body(String.class);
+        return response;
+    }
 }

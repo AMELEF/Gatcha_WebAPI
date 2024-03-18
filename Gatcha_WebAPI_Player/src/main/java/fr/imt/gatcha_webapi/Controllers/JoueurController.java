@@ -143,7 +143,7 @@ public class JoueurController {
                 monsterIndex = i;
             }
             i++;
-        };
+        }
         playerMonsters.remove(monsterIndex);
         mongoTemplate.findAndModify(Query.query(Criteria.where("username").is(username)), Update.update("monsters", playerMonsters), Joueur.class, "Players");
     }

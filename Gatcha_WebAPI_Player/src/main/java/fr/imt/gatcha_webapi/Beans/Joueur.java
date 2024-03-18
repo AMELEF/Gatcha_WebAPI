@@ -26,7 +26,7 @@ public class Joueur {
 
     public Joueur(String username) {
         this.username = username;
-        this.level = 1;
+        this.level = 0;
         this.experience = 0;
         this.monsters = new ArrayList<Monstre>(10);
     }

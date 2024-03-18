@@ -117,18 +117,34 @@ public class JoueurController {
     }
 
     @PostMapping("/monsters/add/{id}")
-    public void acquisitionMonstre(@RequestHeader("Authorization") String token,@RequestBody int monsterId) {
+    public void acquisitionMonstre(@RequestHeader("Authorization") String token,@RequestBody String monsterId) {
         String username = testToken(token);
         List<Monstre> playerMonsters = mongoTemplate.findById(username,Joueur.class,"Players").getMonsters();
-        //playerMonsters.add(monster);
-        mongoTemplate.findAndModify(Query.query(Criteria.where("username").is(username)), Update.update("monsters", playerMonsters), Joueur.class, "Players");
+        boolean monsterNotPresent = true;
+        for (Monstre monster:playerMonsters) {
+            if(monster.getId().equals(monsterId)){ //Si le joueur a déjà le monstre, on n'ajoute pas le monstre
+                monsterNotPresent=false;
+            }
+        };
+        if(monsterNotPresent) {
+            playerMonsters.add(new Monstre(monsterId));
+            mongoTemplate.findAndModify(Query.query(Criteria.where("username").is(username)), Update.update("monsters", playerMonsters), Joueur.class, "Players");
+        }
     }
 
     @PostMapping("/monsters/remove/{id}")
-    public void suppressionMonstre(@RequestHeader("Authorization") String token, @PathVariable int monstreId) {
+    public void suppressionMonstre(@RequestHeader("Authorization") String token, @PathVariable String monsterId) {
         String username = testToken(token);
         List<Monstre> playerMonsters = mongoTemplate.findById(username,Joueur.class,"Players").getMonsters();
-        //playerMonsters.add(monster);
+        int monsterIndex=-1;
+        int i=0;
+        for (Monstre monster:playerMonsters) {
+            if(monster.getId().equals(monsterId)){
+                monsterIndex = i;
+            }
+            i++;
+        };
+        playerMonsters.remove(monsterIndex);
         mongoTemplate.findAndModify(Query.query(Criteria.where("username").is(username)), Update.update("monsters", playerMonsters), Joueur.class, "Players");
     }
 

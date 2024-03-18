@@ -7,12 +7,13 @@ import java.util.List;
 
 public class Monster {
     @Id
-    int id;
+    String id;
     ElementalType type;
     int hp; //vie
     int atk; //attaque
     int def; //défense
     int spd; //vitesse
     List<Ability> abilities; //compétences
+    float lootRate; //Taux de drop
 
 }

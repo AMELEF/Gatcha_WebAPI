@@ -1,13 +1,13 @@
 package fr.imt.gatcha_webapi.Beans;
 
 public class Monstre {
-    private int id;
+    private String id;
 
-    public Monstre(int id) {
+    public Monstre(String id) {
         this.id = id;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 }

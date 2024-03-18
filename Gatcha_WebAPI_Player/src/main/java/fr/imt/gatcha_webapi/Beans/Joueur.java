@@ -30,38 +30,4 @@ public class Joueur {
         this.experience = 0;
         this.monsters = new ArrayList<Monstre>(10);
     }
-
-    // Récupération du niveau du joueur
-    public int getNiveau() {
-        return level;
-    }
-
-    // Gain d'expérience
-    public void gainExperience(double quantite) {
-        experience += quantite;
-        while (experience >= 50 * Math.pow(1.1, level - 1)) {
-            level++;
-            // Augmenter la taille max de la liste de monsters
-            monsters.add(new Monstre(monsters.size() + 1));
-        }
-    }
-
-    // Gain de niveau
-    public void gainNiveau() {
-        level++;
-        experience = 50;
-        // Augmenter le seuil de level up
-        // Augmenter la taille max de la liste de monsters
-        monsters.add(new Monstre(monsters.size() + 1));
-    }
-
-    // Acquisition d'un nouveau monstre
-    public void acquisitionMonstre() {
-        monsters.add(new Monstre(monsters.size() + 1));
-    }
-
-    // Suppression d'un monstre
-    public void suppressionMonstre(int monstreId) {
-        monsters.removeIf(monstre -> monstre.getId() == monstreId);
-    }
 }

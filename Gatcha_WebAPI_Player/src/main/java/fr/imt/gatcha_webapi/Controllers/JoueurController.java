@@ -22,6 +22,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 
+import static java.lang.Math.pow;
+
 @RestController
 @RequestMapping("/players")
 public class JoueurController {
@@ -80,7 +82,7 @@ public class JoueurController {
     @GetMapping("/monsters")
     public List<Monstre> getListeMonstres(@RequestHeader("Authorization") String token) {
         String username = testToken(token);
-        return mongoTemplate.findById(username, Joueur.class, "Players").getMonstres();
+        return mongoTemplate.findById(username, Joueur.class, "Players").getMonsters();
     }
 
     @PostMapping("/level")
@@ -93,27 +95,41 @@ public class JoueurController {
     public void gainExperience(@PathVariable double quantity, @RequestHeader("Authorization") String token) {
         String username = testToken(token);
         double playerXp = mongoTemplate.findById(username,Joueur.class,"Players").getExperience();
-        //Ajoute la quantité entrée en paramètre
-        mongoTemplate.findAndModify(Query.query(Criteria.where("username").is(username)), Update.update("experience",playerXp+quantity),Joueur.class,"Players");
-        //Tests pour voir si on augmente le niveau
-
+        double newXp = playerXp+quantity;
+        int playerLevel = mongoTemplate.findById(username,Joueur.class,"Players").getLevel();
+        int newLevel = playerLevel;
+        while(newXp>50*pow(1.1,playerLevel)){
+            //Ajoute la quantité entrée en paramètre et baisse le niveau
+            newXp = newXp - 50*pow(1.1,newLevel);
+            if(newLevel<50) {
+                newLevel++;
+            }
+        }
+        mongoTemplate.findAndModify(Query.query(Criteria.where("username").is(username)), Update.update("experience", newXp), Joueur.class, "Players");
+        mongoTemplate.findAndModify(Query.query(Criteria.where("username").is(username)), Update.update("level", newLevel), Joueur.class, "Players");
     }
 
     @PostMapping("/levelup")
     public void gainNiveau(@RequestHeader("Authorization") String token) {
         String username = testToken(token);
         int playerLevel = mongoTemplate.findById(username,Joueur.class,"Players").getLevel();
-        mongoTemplate.findAndModify(Query.query(Criteria.where("username").is(username)), Update.update("level",getNiveau(token)),Joueur.class,"Players");
+        mongoTemplate.findAndModify(Query.query(Criteria.where("username").is(username)), Update.update("level", playerLevel+1), Joueur.class, "Players");
     }
 
-    @PostMapping("/monsters/add")
-    public void acquisitionMonstre(@RequestBody Joueur joueur) {
-        joueur.acquisitionMonstre();
+    @PostMapping("/monsters/add/{id}")
+    public void acquisitionMonstre(@RequestHeader("Authorization") String token,@RequestBody int monsterId) {
+        String username = testToken(token);
+        List<Monstre> playerMonsters = mongoTemplate.findById(username,Joueur.class,"Players").getMonsters();
+        //playerMonsters.add(monster);
+        mongoTemplate.findAndModify(Query.query(Criteria.where("username").is(username)), Update.update("monsters", playerMonsters), Joueur.class, "Players");
     }
 
-    @PostMapping("/monsters/remove")
-    public void suppressionMonstre(@RequestBody Joueur joueur, @PathVariable int monstreId) {
-        joueur.suppressionMonstre(monstreId);
+    @PostMapping("/monsters/remove/{id}")
+    public void suppressionMonstre(@RequestHeader("Authorization") String token, @PathVariable int monstreId) {
+        String username = testToken(token);
+        List<Monstre> playerMonsters = mongoTemplate.findById(username,Joueur.class,"Players").getMonsters();
+        //playerMonsters.add(monster);
+        mongoTemplate.findAndModify(Query.query(Criteria.where("username").is(username)), Update.update("monsters", playerMonsters), Joueur.class, "Players");
     }
 
 }

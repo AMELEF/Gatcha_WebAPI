@@ -46,14 +46,10 @@ public class AuthTokenController {
             AuthToken authToken = new AuthToken();
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd-HH:mm:ss");
             String timeStamp = dateFormat.format(new Date());
-            System.out.println(timeStamp);
             String plainToken = user + "-" + timeStamp;
-            System.out.println(plainToken);
             String cryptedToken = AES256.encrypt(plainToken, "QSDFGHJKLM", "OKOKOK");
-            System.out.println(cryptedToken);
             authToken.setToken(cryptedToken);
             authToken.setExpirationDate(Instant.now().plus(1, ChronoUnit.HOURS));
-            System.out.println(authToken.getExpirationDate());
             mongoTemplate.save(authToken,"Tokens");
             return authToken;
         }

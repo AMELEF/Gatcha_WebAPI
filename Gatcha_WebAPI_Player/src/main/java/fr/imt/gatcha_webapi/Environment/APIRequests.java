@@ -19,12 +19,11 @@ public class APIRequests {
     public String requestAuthTokenValidity(String token){
         String url = APIURLs.AUTHAPI.link+"/token/check";
         RestClient restClient = RestClient.create();
-        String response = restClient.post()
+        return restClient.post()
                 .uri(url)
                 .contentType(MediaType.APPLICATION_JSON)
                 .header("Authorization",token)
                 .retrieve()
                 .body(String.class);
-        return response;
     }
 }

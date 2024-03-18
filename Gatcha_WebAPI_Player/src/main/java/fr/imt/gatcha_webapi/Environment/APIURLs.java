@@ -9,7 +9,7 @@ public enum APIURLs {
 
     public final String link;
 
-    private APIURLs(String link) {
+    APIURLs(String link) {
         this.link = link;
     }
 }

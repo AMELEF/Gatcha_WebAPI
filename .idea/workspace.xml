@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6d5ab947-d37e-411b-b40f-d1593de6bdf7" name="Changes" comment="APIAuth+APIPlayer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI_Auth/src/main/java/fr/imt/gatcha_webapi/Controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Auth/src/main/java/fr/imt/gatcha_webapi/Controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI_Auth/src/main/java/fr/imt/gatcha_webapi/Environment/APIRequests.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Auth/src/main/java/fr/imt/gatcha_webapi/Environment/APIRequests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI_Player/src/main/java/fr/imt/gatcha_webapi/Controllers/JoueurController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/src/main/java/fr/imt/gatcha_webapi/Controllers/JoueurController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI_Player/src/main/java/fr/imt/gatcha_webapi/Environment/APIRequests.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/src/main/java/fr/imt/gatcha_webapi/Environment/APIRequests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI_Player/src/main/java/fr/imt/gatcha_webapi/Environment/APIURLs.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/src/main/java/fr/imt/gatcha_webapi/Environment/APIURLs.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +188,7 @@
       <workItem from="1710428047746" duration="4203000" />
       <workItem from="1710537398070" duration="1452000" />
       <workItem from="1710747409517" duration="9711000" />
-      <workItem from="1710763098031" duration="7370000" />
+      <workItem from="1710763098031" duration="8231000" />
     </task>
     <task id="LOCAL-00001" summary="Dockerfile : added build step so it's auto">
       <option name="closed" value="true" />
@@ -295,7 +294,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710757268364</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="APIAuth+APIPlayer">
+      <option name="closed" value="true" />
+      <created>1710770814850</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1710770814850</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

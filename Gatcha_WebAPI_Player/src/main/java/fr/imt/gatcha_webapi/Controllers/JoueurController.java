@@ -2,26 +2,15 @@ package fr.imt.gatcha_webapi.Controllers;
 
 import fr.imt.gatcha_webapi.Beans.Joueur;
 import fr.imt.gatcha_webapi.Beans.Monstre;
-import fr.imt.gatcha_webapi.Encryption.AES256;
 import fr.imt.gatcha_webapi.Environment.APIRequests;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
-import org.springframework.http.HttpStatusCode;
-import org.springframework.web.HttpRequestHandler;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.HttpServerErrorException;
-import org.springframework.web.client.HttpStatusCodeException;
 
-import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
-
 import static java.lang.Math.pow;
 
 @RestController
@@ -36,9 +25,9 @@ public class JoueurController {
     }
 
     /**
-     * Returns true if token is valid
-     * @param token
-     * @return Boolean
+     * Returns username if token is valid
+     * @param token Token
+     * @return Account username
      */
     @RequestMapping("/testtoken")
     public String testToken(@RequestHeader("Authorization") String token){
@@ -105,15 +94,25 @@ public class JoueurController {
                 newLevel++;
             }
         }
+        //Level up et set xp restant
         mongoTemplate.findAndModify(Query.query(Criteria.where("username").is(username)), Update.update("experience", newXp), Joueur.class, "Players");
         mongoTemplate.findAndModify(Query.query(Criteria.where("username").is(username)), Update.update("level", newLevel), Joueur.class, "Players");
+        // Augmentation de la taille de la liste des monstres
+        List<Monstre> monsterList = getListeMonstres(token);
+        List<Monstre> newMonsterList = new ArrayList<Monstre>(10+newLevel);
+        newMonsterList.addAll(monsterList); //Nouvelle liste avec taille augmentée
     }
 
     @PostMapping("/levelup")
     public void gainNiveau(@RequestHeader("Authorization") String token) {
         String username = testToken(token);
         int playerLevel = mongoTemplate.findById(username,Joueur.class,"Players").getLevel();
-        mongoTemplate.findAndModify(Query.query(Criteria.where("username").is(username)), Update.update("level", playerLevel+1), Joueur.class, "Players");
+        mongoTemplate.findAndModify(Query.query(Criteria.where("username").is(username)), Update.update("level", playerLevel+1), Joueur.class, "Players"); //Ajoute un niveau
+        mongoTemplate.findAndModify(Query.query(Criteria.where("username").is(username)), Update.update("experience", 0), Joueur.class, "Players"); //Reset l'xp
+        playerLevel++;
+        List<Monstre> monsterList = getListeMonstres(token);
+        List<Monstre> newMonsterList = new ArrayList<Monstre>(10+playerLevel);
+        newMonsterList.addAll(monsterList); //Nouvelle liste avec taille augmentée
     }
 
     @PostMapping("/monsters/add/{id}")
@@ -121,18 +120,20 @@ public class JoueurController {
         String username = testToken(token);
         List<Monstre> playerMonsters = mongoTemplate.findById(username,Joueur.class,"Players").getMonsters();
         boolean monsterNotPresent = true;
+        //On vérifie que le Joueur n'a pas déjà le monstre
         for (Monstre monster:playerMonsters) {
-            if(monster.getId().equals(monsterId)){ //Si le joueur a déjà le monstre, on n'ajoute pas le monstre
-                monsterNotPresent=false;
+            if (monster.getId().equals(monsterId)) { //Si le joueur a déjà le monstre, on n'ajoute pas le monstre
+                monsterNotPresent = false;
+                break;
             }
-        };
+        }
         if(monsterNotPresent) {
             playerMonsters.add(new Monstre(monsterId));
             mongoTemplate.findAndModify(Query.query(Criteria.where("username").is(username)), Update.update("monsters", playerMonsters), Joueur.class, "Players");
         }
     }
 
-    @PostMapping("/monsters/remove/{id}")
+    @PostMapping("/monsters/remove/{monsterId}")
     public void suppressionMonstre(@RequestHeader("Authorization") String token, @PathVariable String monsterId) {
         String username = testToken(token);
         List<Monstre> playerMonsters = mongoTemplate.findById(username,Joueur.class,"Players").getMonsters();

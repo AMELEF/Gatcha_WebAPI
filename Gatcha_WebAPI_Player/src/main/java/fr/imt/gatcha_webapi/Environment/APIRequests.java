@@ -16,15 +16,15 @@ public class APIRequests {
         this.mongoTemplate = mongoTemplate;
     }
 
-    public HttpStatusCode requestAuthTokenValidity(String token){
+    public String requestAuthTokenValidity(String token){
         String url = APIURLs.AUTHAPI.link+"/token/check";
         RestClient restClient = RestClient.create();
-        ResponseEntity<Void> response = restClient.post()
+        String response = restClient.post()
                 .uri(url)
                 .contentType(MediaType.APPLICATION_JSON)
-                .body(token)
+                .header("Authorization",token)
                 .retrieve()
-                .toBodilessEntity();
-        return response.getStatusCode();
+                .body(String.class);
+        return response;
     }
 }

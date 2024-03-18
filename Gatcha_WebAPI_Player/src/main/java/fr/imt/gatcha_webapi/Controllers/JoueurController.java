@@ -11,6 +11,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.web.HttpRequestHandler;
 import org.springframework.web.bind.annotation.*;
@@ -32,9 +33,14 @@ public class JoueurController {
         this.mongoTemplate = mongoTemplate;
     }
 
+    /**
+     * Returns true if token is valid
+     * @param token
+     * @return Boolean
+     */
     @RequestMapping("/testtoken")
     public String testToken(@RequestHeader("Authorization") String token){
-        return authAPIClient.requestAuthTokenValidity(token).toString();
+        return authAPIClient.requestAuthTokenValidity(token);
     }
 
     @GetMapping("/list")
@@ -42,53 +48,62 @@ public class JoueurController {
         return mongoTemplate.findAll(Joueur.class,"Players");
     }
 
-    @RequestMapping("/add")
-    public void addPlayer(@RequestBody String username, @RequestHeader("Authorization") String token){
-        if(authAPIClient.requestAuthTokenValidity(token)== HttpStatusCode.valueOf(200)){
-            if (!mongoTemplate.exists(Query.query(Criteria.where("identifiant").is(username)),Joueur.class,"Players")){
-                mongoTemplate.save(new Joueur(username), "Players");
-            }
+    @RequestMapping("/register")
+    public String addPlayer(@RequestHeader("Authorization") String token){
+        String username = testToken(token);
+        if (!mongoTemplate.exists(Query.query(Criteria.where("identifiant").is(username)),Joueur.class,"Players")){
+            mongoTemplate.save(new Joueur(username), "Players");
+            return "200 Player has been created";
+        }
+        else{
+            return "401 Invalid token or player already exists";
         }
     }
 
-    @GetMapping("/{id}")
-    public Joueur getInformationsProfil(@PathVariable String id, @RequestHeader("Authorization") String token) {
-        if(authAPIClient.requestAuthTokenValidity(token)== HttpStatusCode.valueOf(200)){
-            return mongoTemplate.findById(id, Joueur.class, "Players");
+
+    @RequestMapping("/deleteMyPlayer")
+    public String removePlayer(@RequestHeader("Authorization") String token){
+        String username = testToken(token);
+        if (mongoTemplate.exists(Query.query(Criteria.where("identifiant").is(username)),Joueur.class,"Players")) {
+            mongoTemplate.remove(getInformationsProfil(token), "Players");
+            return "200 Your player has been deleted, please go to /players/register to create a new one.";
         }
-        return null;
+        return "401 Error deleting your player, invalid token or player doesn't exist";
     }
 
-    @GetMapping("/{id}/monsters")
-    public List<Monstre> getListeMonstres(@PathVariable String id, @RequestHeader("Authorization") String token) {
-        if(authAPIClient.requestAuthTokenValidity(token)== HttpStatusCode.valueOf(200)){
-            return getInformationsProfil(id,token).getMonstres();
-        }
-        return null;
+    @GetMapping("/info")
+    public Joueur getInformationsProfil(@RequestHeader("Authorization") String token) {
+        String username = testToken(token);
+        return mongoTemplate.findById(username, Joueur.class, "Players");
     }
 
-    @PostMapping("/{id}/level")
-    public int getNiveau(@PathVariable String id, @RequestHeader("Authorization") String token) {
-        if(authAPIClient.requestAuthTokenValidity(token)== HttpStatusCode.valueOf(200)){
-            return getInformationsProfil(id, token).getLevel();
-        }
-        return -1;
+    @GetMapping("/monsters")
+    public List<Monstre> getListeMonstres(@RequestHeader("Authorization") String token) {
+        String username = testToken(token);
+        return mongoTemplate.findById(username, Joueur.class, "Players").getMonstres();
     }
 
-    @PostMapping("/{id}/experience")
-    public void gainExperience(@PathVariable String id, @RequestBody double quantite, @RequestHeader("Authorization") String token) {
-        Joueur joueur = getInformationsProfil(id, token);
-        double newExperience = joueur.getExperience();
+    @PostMapping("/level")
+    public int getNiveau(@RequestHeader("Authorization") String token) {
+        String username = testToken(token);
+        return mongoTemplate.findById(username, Joueur.class, "Players").getLevel();
     }
 
-    @PostMapping("/{id}/levelup")
-    public void gainNiveau(@PathVariable String id, @RequestHeader("Authorization") String token) {
-        Joueur joueur = getInformationsProfil(id, token);
-        joueur.setExperience(0);
-        if (joueur.getLevel()<50) {
-            joueur.setLevel(joueur.getLevel() + 1);
-            //Augmenter la taille de la liste des monstres de 1
-        }
+    @PostMapping("/getXp/{quantity}")
+    public void gainExperience(@PathVariable double quantity, @RequestHeader("Authorization") String token) {
+        String username = testToken(token);
+        double playerXp = mongoTemplate.findById(username,Joueur.class,"Players").getExperience();
+        //Ajoute la quantité entrée en paramètre
+        mongoTemplate.findAndModify(Query.query(Criteria.where("username").is(username)), Update.update("experience",playerXp+quantity),Joueur.class,"Players");
+        //Tests pour voir si on augmente le niveau
+
+    }
+
+    @PostMapping("/levelup")
+    public void gainNiveau(@RequestHeader("Authorization") String token) {
+        String username = testToken(token);
+        int playerLevel = mongoTemplate.findById(username,Joueur.class,"Players").getLevel();
+        mongoTemplate.findAndModify(Query.query(Criteria.where("username").is(username)), Update.update("level",getNiveau(token)),Joueur.class,"Players");
     }
 
     @PostMapping("/monsters/add")

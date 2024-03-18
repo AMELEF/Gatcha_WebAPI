@@ -4,26 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d5ab947-d37e-411b-b40f-d1593de6bdf7" name="Changes" comment="Dockerfile : added build step so it's auto">
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/src/main/java/fr/imt/gatcha_webapi/Beans/Ability.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/src/main/java/fr/imt/gatcha_webapi/Beans/Monster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/src/main/java/fr/imt/gatcha_webapi/Controllers/AbilityController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/src/main/java/fr/imt/gatcha_webapi/Controllers/MonsterController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/src/main/java/fr/imt/gatcha_webapi/Environment/APIRequests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/src/main/java/fr/imt/gatcha_webapi/Environment/APIURLs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/src/main/java/fr/imt/gatcha_webapi/Environment/ElementalType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/src/main/java/fr/imt/gatcha_webapi/Beans/Joueur.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/src/main/java/fr/imt/gatcha_webapi/Beans/Monstre.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/src/main/java/fr/imt/gatcha_webapi/Controllers/JoueurController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/src/main/java/fr/imt/gatcha_webapi/Environment/APIRequests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/src/main/java/fr/imt/gatcha_webapi/Environment/APIURLs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="6d5ab947-d37e-411b-b40f-d1593de6bdf7" name="Changes" comment="APIAuth+APIPlayer">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI_Auth/src/main/java/fr/imt/gatcha_webapi/Controllers/AuthTokenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Auth/src/main/java/fr/imt/gatcha_webapi/Controllers/AuthTokenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/target/classes/fr/imt/gatcha_webapi/Controllers/MonsterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/target/classes/fr/imt/gatcha_webapi/Controllers/MonsterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI_Player/src/main/java/fr/imt/gatcha_webapi/Controllers/JoueurController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/src/main/java/fr/imt/gatcha_webapi/Controllers/JoueurController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI_Player/src/main/java/fr/imt/gatcha_webapi/Environment/APIRequests.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/src/main/java/fr/imt/gatcha_webapi/Environment/APIRequests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI_Player/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI_Player/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/target/classes/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +66,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -114,7 +102,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.yml.auth-api: Compose Deployment">
+  <component name="RunManager" selected="Spring Boot.PlayerAPIApplication">
     <configuration name="AuthAPIApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="Gatcha_WebAPI_Auth" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="fr.imt.gatcha_webapi.AuthAPIApplication" />
@@ -129,7 +117,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerAPIApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration name="PlayerAPIApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="Gatcha_WebAPI_Player" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="fr.imt.gatcha_webapi.PlayerAPIApplication" />
       <method v="2">
@@ -145,6 +133,7 @@
     <configuration name="docker-compose.yml.auth-api: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
+          <option name="envFilePath" value="" />
           <option name="services">
             <list>
               <option value="auth-api" />
@@ -172,7 +161,7 @@
       <item itemvalue="Docker.docker-compose.yml.auth-api: Compose Deployment" />
       <item itemvalue="Docker.docker-compose.yml.mongo: Compose Deployment" />
       <item itemvalue="Spring Boot.InvocAPIApplication" />
-      <item itemvalue="Spring Boot.PlayerAPIApplication (1)" />
+      <item itemvalue="Spring Boot.PlayerAPIApplication" />
       <item itemvalue="Spring Boot.AuthAPIApplication" />
     </list>
     <recent_temporary>
@@ -196,7 +185,10 @@
       <workItem from="1710265240164" duration="12670000" />
       <workItem from="1710323789289" duration="5349000" />
       <workItem from="1710353156496" duration="5475000" />
-      <workItem from="1710416887277" duration="1151000" />
+      <workItem from="1710416887277" duration="6026000" />
+      <workItem from="1710428047746" duration="4203000" />
+      <workItem from="1710537398070" duration="1452000" />
+      <workItem from="1710747409517" duration="1573000" />
     </task>
     <task id="LOCAL-00001" summary="Dockerfile : added build step so it's auto">
       <option name="closed" value="true" />
@@ -222,15 +214,53 @@
       <option name="project" value="LOCAL" />
       <updated>1709914228139</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="APIAuth+APIPlayer">
+      <option name="closed" value="true" />
+      <created>1710418185617</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1710418185617</updated>
+    </task>
+    <task id="LOCAL-00005" summary="APIAuth+APIPlayer">
+      <option name="closed" value="true" />
+      <created>1710418296611</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1710418296611</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Dockerfile : added build step so it's auto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dockerfile : added build step so it's auto" />
+    <MESSAGE value="APIAuth+APIPlayer" />
+    <option name="LAST_COMMIT_MESSAGE" value="APIAuth+APIPlayer" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.springframework.web.client.HttpClientErrorException$BadRequest" package="org.springframework.web.client" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class MonsterAPIApplication {
 
     public static void main(String[] args) {
-
         SpringApplication.run(MonsterAPIApplication.class, args);
     }
 

@@ -12,7 +12,7 @@ services:
     networks:
       - gatcha-network
     volumes:
-      - mongo-gatchadb:/data/db
+      - mongo-gatchadb
   auth-api:
     depends_on:
       - mongo
@@ -34,7 +34,7 @@ services:
       dockerfile: DockerfilePlayer
     image: player-api:latest
     environment:
-      SPRING_DATA_MONGO_URI: mongodb://mongoadmin:password@localhost:27017/gatchadb
+      SPRING_DATA_MONGO_URI: mongodb://mongoadmin:password@localhost:27017/playerdb
     ports:
       - "27019:27019"
     networks:
@@ -47,7 +47,7 @@ services:
       dockerfile: DockerfileMonster
     image: monster-api:latest
     environment:
-      SPRING_DATA_MONGO_URI: mongodb://mongoadmin:password@localhost:27017/gatchadb
+      SPRING_DATA_MONGO_URI: mongodb://mongoadmin:password@localhost:27017/monsterdb
     ports:
       - "27021:27021"
     networks:
@@ -60,9 +60,22 @@ services:
       dockerfile: DockerfileInvoc
     image: invoc-api:latest
     environment:
-      SPRING_DATA_MONGO_URI: mongodb://mongoadmin:password@localhost:27017/gatchadb
+      SPRING_DATA_MONGO_URI: mongodb://mongoadmin:password@localhost:27017/invocdb
     ports:
       - "27022:27022"
+    networks:
+      - gatcha-network
+  combat-api:
+    depends_on:
+      - mongo
+    container_name: combat-api
+    build:
+      dockerfile: DockerfileCombat
+    image: combat-api:latest
+    environment:
+      SPRING_DATA_MONGO_URI: mongodb://mongoadmin:password@localhost:27017/combatdb
+    ports:
+      - "27023:27023"
     networks:
       - gatcha-network
 networks:

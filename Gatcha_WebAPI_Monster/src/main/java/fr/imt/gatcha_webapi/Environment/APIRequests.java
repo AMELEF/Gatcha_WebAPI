@@ -1,5 +1,6 @@
 package fr.imt.gatcha_webapi.Environment;
 
+import fr.imt.gatcha_webapi.Beans.Monster;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.http.MediaType;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
@@ -23,4 +24,5 @@ public class APIRequests {
                 .retrieve()
                 .body(String.class);
     }
+
 }

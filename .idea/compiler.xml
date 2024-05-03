@@ -8,14 +8,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Gatcha_WebAPI_Auth" />
+        <module name="Gatcha_WebAPI_Combat" />
         <module name="Gatcha_WebAPI_Player" />
-        <module name="Gatcha_WebAPI_Monster" />
         <module name="Gatcha_WebAPI_Invoc" />
+        <module name="Gatcha_WebAPI_Monster" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Gatcha_WebAPI_Monster (1)" target="17" />
-      <module name="Gatcha_WebAPI_Monster (2)" target="17" />
       <module name="Gatcha_WebAPI_Player (1)" target="17" />
       <module name="maven-archiver" target="1.5" />
     </bytecodeTargetLevel>
@@ -23,10 +22,9 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Gatcha_WebAPI_Auth" options="-parameters" />
+      <module name="Gatcha_WebAPI_Combat" options="-parameters" />
       <module name="Gatcha_WebAPI_Invoc" options="-parameters" />
       <module name="Gatcha_WebAPI_Monster" options="-parameters" />
-      <module name="Gatcha_WebAPI_Monster (1)" options="-parameters" />
-      <module name="Gatcha_WebAPI_Monster (2)" options="-parameters" />
       <module name="Gatcha_WebAPI_Player" options="-parameters" />
       <module name="Gatcha_WebAPI_Player (1)" options="-parameters" />
     </option>

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/Gatcha_WebAPI_Auth/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Gatcha_WebAPI_Combat/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Gatcha_WebAPI_Invoc/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Gatcha_WebAPI_Monster/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Gatcha_WebAPI_Player/src/main/java" charset="UTF-8" />

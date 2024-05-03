@@ -29,7 +29,7 @@ public class JoueurController {
      * @param token Token
      * @return Account username
      */
-    @RequestMapping("/testtoken")
+
     public String testToken(@RequestHeader("Authorization") String token){
         return authAPIClient.requestAuthTokenValidity(token);
     }

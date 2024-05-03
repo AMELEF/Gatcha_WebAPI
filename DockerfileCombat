@@ -1,0 +1,13 @@
+#Build CombatAPI package
+FROM maven:3.9.6-amazoncorretto-21 as build
+RUN mkdir -p /combat-api
+WORKDIR /combat-api
+COPY Gatcha_WebAPI_Combat/pom.xml /combat-api
+COPY Gatcha_WebAPI_Combat/src /combat-api/src
+RUN mvn -f pom.xml clean package
+#Run CombatAPI container
+FROM openjdk:21
+MAINTAINER amflinois
+COPY --from=build /combat-api/target/*.jar combat-api.jar
+ENTRYPOINT ["java", "-jar", "/combat-api.jar"]
+EXPOSE 27023/tcp

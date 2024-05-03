@@ -107,6 +107,43 @@ Montaha BEN SALEM<br>
 
 > Url : http://localhost:27021
 
+
+### Objets :
+- **Ability** : int num, int dmg, Ratio ratio, int cooldown, int lvl, int lvlMax;
+- **Monstre** : String id, String element, int level, double experience, int skillPoints, int hp, int atk, int def, int spd, List skills, float lootRate;
+
+### Endpoints :
+
+**Avec token (header "Authorization")** :
+> **/list** :
+> - Renvoie la liste de tous les monstres du player
+
+> **/globalList** :
+> - Renvoie la liste de tous les monstres
+
+> **/addBulkGlobal** :
+> - Créer plusiers monstres dans la liste des monstres
+
+> **/addBulkPlayer** :
+> - Créer plusiers monstres dans la liste des monstres possédés par le Player
+
+> **/addPlayer** :
+> - Créer un monstre dans la liste des monstres pour un player
+
+> **/addGlobal** :
+> - Créer un monstre dans la liste des monstres
+
+> **/getXp/{monsterId}/{quantity}** :
+> - Simule un gain d'XP pour le monstre (augmente xp, lvl up, points de compétence...)
+
+### Tests
+> **/resetPlayerMonsters** :
+> - Fonction de test (Supprimer tous les monstres du player)
+
+> **/resetGlobalMonsters** :
+> - Fonction de test (Supprimer tous les monstres)
+
+
 </details>
 <br>
 

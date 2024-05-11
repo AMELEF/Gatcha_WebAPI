@@ -8,12 +8,25 @@ Zhengkun YANG<br>
 André-Mathys FLINOIS<br>
 Serigne Saliou CISSE<br>
 Montaha BEN SALEM<br>
+Lucas KADERI<br>
+Nohaman L'MOSTAQIM<br>
 
 ## Comment lancer
 - Cloner le projet entier dans un dossier<br>
 - Exécuter start.bat (ou "docker-compose up -d" dans un terminal dans le dossier du projet)<br>
 > Ce problème peut arriver lorsque l'on lance le docker-compose pour la première fois de 0, il faut simplement le lancer une 2ème fois :
 > <img src="https://i.ibb.co/LP1LWCn/issue-pomxml.png">
+
+## Etapes pour tester
+- Créer un compte avec l'URL : http://localhost:27018/user/register, en postant un JSON {"username":"foo","password":"bar"}.<br><br>
+- Générer un token avec l'URL : http://localhost:27018/token/login, en postant le même JSON (identifiants).<br><br>
+- Les tokens sont visualisables depuis l'URL http://localhost:27018/token/list
+- Récupérer le token, puis le mettre en header "Authorization" (Custom HTTP authentication).<br><br>
+- Créer un compte Joueur avec l'URL : http://localhost:27019/players/register, simplement en envoyant la requête avec le token en header.<br><br>
+- Vérifier la création du compte avec l'URL : http://localhost:27019/players/list, cette URL est accessible directement depuis un navigateur car ne nécessite pas d'authentification <br><br>
+- Ajouter les monstres au jeu, en copiant le contenu du fichier globalMonsters.json dans la racine du projet, et en l'envoyant à l'URL : http://localhost:27021/monsters/addBulkGlobal. <br><br>
+- Invoquer un monstre en envoyant une requête avec le token en header à l'URL : http://localhost:27022/invoc/draw. <br><br>
+- Toutes les URL se trouvent dans la documentation ci-dessous
 
 ## Documentation
 
@@ -57,7 +70,7 @@ Montaha BEN SALEM<br>
 <details open>
 <summary> PlayerAPI : </summary>
 
-> Url : http://localhost:27019
+> Url : http://localhost:27019/players
 
 ### Objets :
 - **Player** : String username, int level, double experience, List<Monstre> monsters;
@@ -105,7 +118,7 @@ Montaha BEN SALEM<br>
 <details open>
 <summary> MonsterAPI : </summary>
 
-> Url : http://localhost:27021
+> Url : http://localhost:27021/monsters
 
 
 ### Objets :
@@ -122,10 +135,10 @@ Montaha BEN SALEM<br>
 > - Renvoie la liste de tous les monstres
 
 > **/addBulkGlobal** :
-> - Créer plusiers monstres dans la liste des monstres
+> - Créer plusieurs monstres dans la liste des monstres
 
 > **/addBulkPlayer** :
-> - Créer plusiers monstres dans la liste des monstres possédés par le Player
+> - Créer plusieurs monstres dans la liste des monstres possédés par le Player
 
 > **/addPlayer** :
 > - Créer un monstre dans la liste des monstres pour un player
@@ -150,12 +163,16 @@ Montaha BEN SALEM<br>
 <details open>
 <summary> InvocAPI : </summary>
 
-> Url : http://localhost:27022
+> Url : http://localhost:27022/invoc
+
+/ ! \ La fonctionnalité de replay en cas de serveur down n'est pas implémentée
 
 ### Objets
 - **Monster** : identique à l'API Monstres
 
-
+### Endpoints
+> **/draw** :
+> - Tire un monstre au hasard, et l'enregistre dans la liste du Joueur associé au token. Le monstre est enregistré dans les API Monstre et Joueur. 
 
 
 
@@ -166,7 +183,11 @@ Un endpoint est disponible pour tester l'algorithme d'invocation, en remplaçant
 Les résultats des tirages sont écrits dans les logs du conteneur "invoc-api"
 
 </details>
-
+<br>
+<details open>
+<summary> CombatAPI : (non implémentée)</summary>
+</details>
+<br>
 <details open>
 <summary> MongoDB : </summary>
 
@@ -195,6 +216,7 @@ AuthAPI : 27018<br>
 PlayerAPI : 27019<br>
 MonsterAPI : 27021<br>
 InvocAPI : 27022<br>
+CombatAPI (non implémentée) : 27023<br>
 
 
 

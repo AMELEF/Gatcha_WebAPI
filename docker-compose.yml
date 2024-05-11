@@ -12,7 +12,7 @@ services:
     networks:
       - gatcha-network
     volumes:
-      - mongo-gatchadb
+      - mongo-gatchadb:/data/db
   auth-api:
     depends_on:
       - mongo

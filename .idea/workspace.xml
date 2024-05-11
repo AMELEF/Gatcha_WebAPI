@@ -5,70 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d5ab947-d37e-411b-b40f-d1593de6bdf7" name="Changes" comment="APIAuth+APIPlayer">
-      <change afterPath="$PROJECT_DIR$/DockerfileCombat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Combat/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Combat/mvnw.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Combat/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Combat/src/main/java/fr/imt/gatcha_webapi/Beans/Ability.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Combat/src/main/java/fr/imt/gatcha_webapi/Beans/Attacks/Ratio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Combat/src/main/java/fr/imt/gatcha_webapi/Beans/Monster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Combat/src/main/java/fr/imt/gatcha_webapi/CombatAPIApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Combat/src/main/java/fr/imt/gatcha_webapi/Controllers/CombatController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Combat/src/main/java/fr/imt/gatcha_webapi/Encryption/AES256.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Combat/src/main/java/fr/imt/gatcha_webapi/Environment/APIRequests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Combat/src/main/java/fr/imt/gatcha_webapi/Environment/APIURLs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Combat/target/Gatcha_WebAPI-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Combat/target/Gatcha_WebAPI-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Combat/target/classes/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Combat/target/classes/fr/imt/gatcha_webapi/Beans/Ability.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Combat/target/classes/fr/imt/gatcha_webapi/Beans/Attacks/Ratio.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Combat/target/classes/fr/imt/gatcha_webapi/Beans/Monster.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Combat/target/classes/fr/imt/gatcha_webapi/Controllers/AbilityController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Combat/target/classes/fr/imt/gatcha_webapi/Controllers/MonsterController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Combat/target/classes/fr/imt/gatcha_webapi/Encryption/AES256.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Combat/target/classes/fr/imt/gatcha_webapi/Environment/APIRequests.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Combat/target/classes/fr/imt/gatcha_webapi/Environment/APIURLs.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Combat/target/classes/fr/imt/gatcha_webapi/MonsterAPIApplication.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Combat/target/maven-archiver/pom.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Combat/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Combat/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Combat/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Combat/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Combat/target/surefire-reports/TEST-fr.imt.gatcha_webapi.GatchaWebApiApplicationTests.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Combat/target/surefire-reports/fr.imt.gatcha_webapi.GatchaWebApiApplicationTests.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Combat/target/test-classes/fr/imt/gatcha_webapi/BeanTests/AuthTokenTests.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Combat/target/test-classes/fr/imt/gatcha_webapi/GatchaWebApiApplicationTests.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/src/main/java/fr/imt/gatcha_webapi/Beans/Ability.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/src/main/java/fr/imt/gatcha_webapi/Beans/Attacks/Ratio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/src/main/java/fr/imt/gatcha_webapi/Beans/Invocation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/src/main/java/fr/imt/gatcha_webapi/Beans/Monster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/src/main/java/fr/imt/gatcha_webapi/Controllers/InvocationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/src/test/java/fr/imt/gatcha_webapi/ControllerTests/InvocationControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/globalMonsters.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI_Auth/src/main/resources/application-localhost.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Combat/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI_Combat/src/main/java/fr/imt/gatcha_webapi/Controllers/CombatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Combat/src/main/java/fr/imt/gatcha_webapi/Controllers/CombatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/src/main/java/fr/imt/gatcha_webapi/Controllers/InvocationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/src/main/java/fr/imt/gatcha_webapi/Controllers/InvocationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/src/main/java/fr/imt/gatcha_webapi/Environment/APIRequests.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/src/main/java/fr/imt/gatcha_webapi/Environment/APIRequests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Invoc/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/src/main/java/fr/imt/gatcha_webapi/Controllers/MonsterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/src/main/java/fr/imt/gatcha_webapi/Controllers/MonsterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/src/main/java/fr/imt/gatcha_webapi/Environment/APIRequests.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/src/main/java/fr/imt/gatcha_webapi/Environment/APIRequests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/src/main/java/fr/imt/gatcha_webapi/MonsterAPIApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/src/main/java/fr/imt/gatcha_webapi/MonsterAPIApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/target/classes/fr/imt/gatcha_webapi/Beans/Ability.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/target/classes/fr/imt/gatcha_webapi/Beans/Ability.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/target/classes/fr/imt/gatcha_webapi/Beans/Monster.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/target/classes/fr/imt/gatcha_webapi/Beans/Monster.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/target/classes/fr/imt/gatcha_webapi/Controllers/MonsterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/target/classes/fr/imt/gatcha_webapi/Controllers/MonsterController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/target/classes/fr/imt/gatcha_webapi/Environment/APIRequests.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/target/classes/fr/imt/gatcha_webapi/Environment/APIRequests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/target/classes/fr/imt/gatcha_webapi/Environment/APIURLs.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/target/classes/fr/imt/gatcha_webapi/Environment/APIURLs.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI_Monster/target/classes/fr/imt/gatcha_webapi/Environment/ElementalType.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI_Player/src/main/java/fr/imt/gatcha_webapi/Controllers/JoueurController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/src/main/java/fr/imt/gatcha_webapi/Controllers/JoueurController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gatcha_WebAPI_Player/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Gatcha_WebAPI_Player/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/monstres.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -284,6 +228,8 @@
       <workItem from="1712062889687" duration="600000" />
       <workItem from="1712848062753" duration="810000" />
       <workItem from="1713267909619" duration="547000" />
+      <workItem from="1714762929596" duration="2467000" />
+      <workItem from="1715441705639" duration="7590000" />
     </task>
     <task id="LOCAL-00001" summary="Dockerfile : added build step so it's auto">
       <option name="closed" value="true" />
@@ -413,7 +359,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710780996277</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="APIAuth+APIPlayer">
+      <option name="closed" value="true" />
+      <created>1714763051018</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1714763051018</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

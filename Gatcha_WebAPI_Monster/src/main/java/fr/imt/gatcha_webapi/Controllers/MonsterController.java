@@ -49,13 +49,12 @@ public class MonsterController {
     @RequestMapping("/addBulkPlayer")
     public void bulkAddMonsterPlayer(@RequestBody List<Monster> monsterList,@RequestHeader("Authorization") String token){
         for (Monster monster : monsterList) {
-            addMonsterPlayer(monster.getId(),token);
+            addMonsterPlayer(monster,token);
         }
     }
 
     @RequestMapping("/addPlayer")
-    public String addMonsterPlayer(@RequestBody String monsterId, @RequestHeader("Authorization") String token){
-        Monster monster = mongoTemplate.findById(monsterId,Monster.class,"GlobalMonsterList");
+    public String addMonsterPlayer(@RequestBody Monster monster, @RequestHeader("Authorization") String token){
         if (monster!=null) {
             mongoTemplate.save(monster, playerMonsterCollection(token));
             return monster.getId();

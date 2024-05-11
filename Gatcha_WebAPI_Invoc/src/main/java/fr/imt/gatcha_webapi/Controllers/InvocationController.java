@@ -27,7 +27,7 @@ public class InvocationController {
         for (Monster monster : globalMonsterList) {
             totalLootRate += monster.getLootRate();
             if (randValue < totalLootRate) {
-                String monsterid = apiClient.generateDrawnMonster(monster.getId(),token);
+                String monsterid = apiClient.generateDrawnMonster(monster,token);
                 if (monsterid.equals("error")){Monster errormonster = new Monster(); errormonster.setId("ErrorMonster:("); return errormonster;}
                 apiClient.sendDrawnMonsterIdToPlayerAPI(token, monsterid);
                 return monster;
@@ -45,6 +45,7 @@ public class InvocationController {
         for (Monster monster : globalMonsterList) {
             totalLootRate += monster.getLootRate();
             if (randValue < totalLootRate) {
+                System.out.println("The drawn monster is : "+monster.getId());
                 return monster;
             }
         }

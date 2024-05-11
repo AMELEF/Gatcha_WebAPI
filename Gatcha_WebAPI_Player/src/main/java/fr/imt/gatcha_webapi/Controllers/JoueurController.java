@@ -115,8 +115,8 @@ public class JoueurController {
         newMonsterList.addAll(monsterList); //Nouvelle liste avec taille augmentée
     }
 
-    @PostMapping("/monsters/add/{id}")
-    public void acquisitionMonstre(@RequestHeader("Authorization") String token,@RequestBody String monsterId) {
+    @RequestMapping("/monsters/add/{monsterId}")
+    public void acquisitionMonstre(@RequestHeader("Authorization") String token,@PathVariable String monsterId) {
         String username = testToken(token);
         List<Monstre> playerMonsters = mongoTemplate.findById(username,Joueur.class,"Players").getMonsters();
         boolean monsterNotPresent = true;

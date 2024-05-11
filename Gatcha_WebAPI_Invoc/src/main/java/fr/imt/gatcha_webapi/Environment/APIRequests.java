@@ -34,24 +34,25 @@ public class APIRequests {
         return Arrays.stream(restTemplate.getForEntity(url,Monster[].class).getBody()).toList();
     }
 
-    public String generateDrawnMonster(String monsterId, String token){
+    public String generateDrawnMonster(Monster monster, String token){
         String url = APIURLs.MONSTERAPI.link+"/monsters/addPlayer";
         RestClient restClient = RestClient.create();
         return restClient.post()
                 .uri(url)
                 .contentType(MediaType.APPLICATION_JSON)
-                .body(monsterId)
+                .body(monster)
                 .header("Authorization",token)
                 .retrieve()
                 .body(String.class);
     }
 
-    public void sendDrawnMonsterIdToPlayerAPI(String token, String id){
-        String url = APIURLs.PLAYERAPI.link+"/monsters/add/"+id;
+    public void sendDrawnMonsterIdToPlayerAPI(String token, String monsterId){
+        String url = APIURLs.PLAYERAPI.link+"/players/monsters/add/"+monsterId;
         RestClient restClient = RestClient.create();
         restClient.post()
                 .uri(url)
                 .contentType(MediaType.APPLICATION_JSON)
-                .header("Authorization",token);
+                .header("Authorization",token)
+                .retrieve();
     }
 }

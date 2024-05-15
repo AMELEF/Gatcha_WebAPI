@@ -26,6 +26,7 @@ Nohaman L'MOSTAQIM<br>
 - Vérifier la création du compte avec l'URL : http://localhost:27019/players/list, cette URL est accessible directement depuis un navigateur car ne nécessite pas d'authentification <br><br>
 - Ajouter les monstres au jeu, en copiant le contenu du fichier globalMonsters.json dans la racine du projet, et en l'envoyant à l'URL : http://localhost:27021/monsters/addBulkGlobal. <br><br>
 - Invoquer un monstre en envoyant une requête avec le token en header à l'URL : http://localhost:27022/invoc/draw. <br><br>
+- L'algorithme de tirage aléatoire peut-être testé grâce à cette URL : http://localhost:27022/invoc/testDrawFunction/{nombreDeTiragesVoulus}. Tous les tirages et un résumé sont imprimés dans les logs du conteneur InvocAPI
 - Toutes les URL se trouvent dans la documentation ci-dessous
 
 ## Documentation
